@@ -1,0 +1,8 @@
+{
+  "name": "siscopmob",
+  "app_id": "bd7302ba",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
