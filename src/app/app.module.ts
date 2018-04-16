@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { HomePageModule } from '../pages/home/home.module';
+import { LoginPage } from '../pages/login/login';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -15,6 +16,7 @@ export const firebaseConfig = {
   apiKey: "AIzaSyBuaOmZ4fuRsocc24xOsEP4z-CVq7vOZ5Q",
   authDomain: "siscopmobi.firebaseapp.com",
   databaseURL: "https://siscopmobi.firebaseio.com",
+  projectId: "siscopmobi",
   storageBucket: "siscopmobi.appspot.com",
   messagingSenderId: "781377731132"
 };
@@ -22,19 +24,20 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    LoginPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HomePageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    LoginPage
   ],
   providers: [
     StatusBar,
