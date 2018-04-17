@@ -24,6 +24,7 @@ export class LoginPage {
 
   async login(user: User) {
     try {
+      user.email = user.email + "@sesp.pr.gov.br";
       const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {
         this.navCtrl.setRoot('HomePage');
